@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Response } from 'express';
 import bodyParser from 'body-parser';
 import carRouter from './routes/cars.routes';
 
@@ -11,7 +11,7 @@ async function createServer() {
 
     app.use('/api/cars', carRouter)
 
-    app.use('*', async (_, res) => {
+    app.use('*', async (_, res: Response) => {
         return res.status(404).json({ error: 'not found' });
     });
 
