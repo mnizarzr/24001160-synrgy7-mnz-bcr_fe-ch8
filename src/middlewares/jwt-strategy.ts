@@ -1,23 +1,29 @@
-import { Strategy as JwtStrategy, StrategyOptions, ExtractJwt, VerifyCallback, VerifiedCallback } from 'passport-jwt'
+import {
+  ExtractJwt,
+  Strategy as JwtStrategy,
+  StrategyOptions,
+  VerifiedCallback,
+  VerifyCallback,
+} from "passport-jwt";
 
 const opts: StrategyOptions = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: "nanti dari env",
+  secretOrKey: "123456789",
   issuer: "bcr-web-server",
   audience: "bcr-user",
   jsonWebTokenOptions: {
     maxAge: "7d",
   },
-}
+};
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const verify: VerifyCallback = (payload: any, done: VerifiedCallback) => {
   if (payload.sub === null || payload.sub === undefined) {
-    return done(new Error("Token doesn't contain valid payload"), false)
+    return done(new Error("Token doesn't contain valid payload"), false);
   }
-  return done(null, payload)
-}
+  return done(null, payload);
+};
 
-const jwtStrategy = () => new JwtStrategy(opts, verify)
+const jwtStrategy = () => new JwtStrategy(opts, verify);
 
-export default jwtStrategy
+export default jwtStrategy;

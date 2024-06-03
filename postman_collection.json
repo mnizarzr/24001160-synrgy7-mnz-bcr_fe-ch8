@@ -1,253 +1,882 @@
 {
-	"info": {
-		"_postman_id": "5a51c220-4281-419f-8b19-05b469918370",
-		"name": "BCR CH 5",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "4905619"
-	},
-	"item": [
-		{
-			"name": "Retrieve all cars",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "127.0.0.1:3000/api/cars",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"cars"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "All cars",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "127.0.0.1:3000/api/cars",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"cars"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"91b-kvf4UqFKT8coejDo5o2A3fB4J+k\""
-						},
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 20 May 2024 12:18:08 GMT"
-						},
-						{
-							"key": "Content-Length",
-							"value": "2331"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"success\",\n    \"cars\": [\n        {\n            \"id\": 1,\n            \"name\": \"Honda Civic\",\n            \"price\": 22473,\n            \"picture\": null,\n            \"start_rent\": \"2024-06-17T16:25:47.765Z\",\n            \"finish_rent\": \"2024-06-18T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"BMW 3 Series\",\n            \"price\": 82326,\n            \"picture\": null,\n            \"start_rent\": \"2024-06-11T16:25:47.765Z\",\n            \"finish_rent\": \"2024-06-20T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Audi A4\",\n            \"price\": 57834,\n            \"picture\": null,\n            \"start_rent\": \"2024-05-30T16:25:47.765Z\",\n            \"finish_rent\": \"2024-05-31T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Jeep Wrangler\",\n            \"price\": 85435,\n            \"picture\": null,\n            \"start_rent\": \"2024-05-27T16:25:47.765Z\",\n            \"finish_rent\": \"2024-06-03T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Mercedes-Benz C-Class\",\n            \"price\": 23203,\n            \"picture\": null,\n            \"start_rent\": \"2024-06-02T16:25:47.765Z\",\n            \"finish_rent\": \"2024-06-09T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Honda Civic\",\n            \"price\": 50778,\n            \"picture\": null,\n            \"start_rent\": \"2024-06-15T16:25:47.765Z\",\n            \"finish_rent\": \"2024-06-25T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Volkswagen Golf\",\n            \"price\": 27661,\n            \"picture\": null,\n            \"start_rent\": \"2024-06-13T16:25:47.765Z\",\n            \"finish_rent\": \"2024-06-21T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Audi A4\",\n            \"price\": 13033,\n            \"picture\": null,\n            \"start_rent\": \"2024-05-29T16:25:47.765Z\",\n            \"finish_rent\": \"2024-05-30T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Mercedes-Benz C-Class\",\n            \"price\": 20473,\n            \"picture\": null,\n            \"start_rent\": \"2024-05-21T16:25:47.765Z\",\n            \"finish_rent\": \"2024-05-24T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Chevrolet Corvette\",\n            \"price\": 25942,\n            \"picture\": null,\n            \"start_rent\": \"2024-05-27T16:25:47.765Z\",\n            \"finish_rent\": \"2024-05-29T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Tesla Model X\",\n            \"price\": 1000000000,\n            \"picture\": \"https://res.cloudinary.com/djepwirkq/image/upload/v1716136689/bcr/sumolhkyinskvk8fq3j4.png\",\n            \"start_rent\": \"2024-06-16T16:25:47.765Z\",\n            \"finish_rent\": \"2024-06-17T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:38:10.124Z\",\n            \"updated_at\": null\n        }\n    ]\n}"
-				}
-			]
-		},
-		{
-			"name": "Retrieve a car by id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "127.0.0.1:3000/api/cars/:id",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"cars",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "1",
-							"uuid": "00e6f802-16cd-42da-b39a-f72efa8b7ed2"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add a car",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "Tesla Model Z",
-							"type": "text"
-						},
-						{
-							"key": "image",
-							"type": "file",
-							"src": "/home/nizar/Downloads/GUID-A016FC6C-5896-4495-9DD8-2B074869A838-online-en-US.png"
-						},
-						{
-							"key": "price",
-							"value": "1000000",
-							"type": "text"
-						},
-						{
-							"key": "start_rent",
-							"value": "2024-06-16T16:25:47.765Z",
-							"type": "text"
-						},
-						{
-							"key": "finish_rent",
-							"value": "2024-06-17T16:25:47.765Z",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "127.0.0.1:3000/api/cars",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"cars"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update a car by id",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "Mazda",
-							"type": "text"
-						},
-						{
-							"key": "image",
-							"type": "file",
-							"src": "/home/nizar/Pictures/Camera/Photo from 2024-05-20 19-43-23.186184.jpeg"
-						},
-						{
-							"key": "price",
-							"value": "600000",
-							"type": "text"
-						},
-						{
-							"key": "start_rent",
-							"value": "2024-06-17T16:25:47.765Z",
-							"type": "text"
-						},
-						{
-							"key": "finish_rent",
-							"value": "2024-06-18T16:25:47.765Z",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "127.0.0.1:3000/api/cars/:id",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"cars",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "1",
-							"uuid": "b052610d-e182-4ce3-a67f-ef6843415cde"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete a car by id",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "127.0.0.1:3000/api/cars/:id",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"cars",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "1",
-							"uuid": "ac8b6280-380f-47d8-bfd7-9f9e036760d4"
-						}
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "4f7e096f-7a5a-4e16-a973-0122372d3bb0",
+    "name": "BCR CH 6",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "4905619"
+  },
+  "item": [
+    {
+      "name": "Cars",
+      "item": [
+        {
+          "name": "Retrieve all cars",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "127.0.0.1:3000/api/cars",
+              "host": ["127", "0", "0", "1"],
+              "port": "3000",
+              "path": ["api", "cars"]
+            }
+          },
+          "response": [
+            {
+              "name": "All cars",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "127.0.0.1:3000/api/cars",
+                  "host": ["127", "0", "0", "1"],
+                  "port": "3000",
+                  "path": ["api", "cars"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"91b-kvf4UqFKT8coejDo5o2A3fB4J+k\""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 20 May 2024 12:18:08 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "2331"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"success\",\n    \"cars\": [\n        {\n            \"id\": 1,\n            \"name\": \"Honda Civic\",\n            \"price\": 22473,\n            \"picture\": null,\n            \"start_rent\": \"2024-06-17T16:25:47.765Z\",\n            \"finish_rent\": \"2024-06-18T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"BMW 3 Series\",\n            \"price\": 82326,\n            \"picture\": null,\n            \"start_rent\": \"2024-06-11T16:25:47.765Z\",\n            \"finish_rent\": \"2024-06-20T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Audi A4\",\n            \"price\": 57834,\n            \"picture\": null,\n            \"start_rent\": \"2024-05-30T16:25:47.765Z\",\n            \"finish_rent\": \"2024-05-31T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Jeep Wrangler\",\n            \"price\": 85435,\n            \"picture\": null,\n            \"start_rent\": \"2024-05-27T16:25:47.765Z\",\n            \"finish_rent\": \"2024-06-03T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Mercedes-Benz C-Class\",\n            \"price\": 23203,\n            \"picture\": null,\n            \"start_rent\": \"2024-06-02T16:25:47.765Z\",\n            \"finish_rent\": \"2024-06-09T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Honda Civic\",\n            \"price\": 50778,\n            \"picture\": null,\n            \"start_rent\": \"2024-06-15T16:25:47.765Z\",\n            \"finish_rent\": \"2024-06-25T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Volkswagen Golf\",\n            \"price\": 27661,\n            \"picture\": null,\n            \"start_rent\": \"2024-06-13T16:25:47.765Z\",\n            \"finish_rent\": \"2024-06-21T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Audi A4\",\n            \"price\": 13033,\n            \"picture\": null,\n            \"start_rent\": \"2024-05-29T16:25:47.765Z\",\n            \"finish_rent\": \"2024-05-30T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Mercedes-Benz C-Class\",\n            \"price\": 20473,\n            \"picture\": null,\n            \"start_rent\": \"2024-05-21T16:25:47.765Z\",\n            \"finish_rent\": \"2024-05-24T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Chevrolet Corvette\",\n            \"price\": 25942,\n            \"picture\": null,\n            \"start_rent\": \"2024-05-27T16:25:47.765Z\",\n            \"finish_rent\": \"2024-05-29T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:25:47.796Z\",\n            \"updated_at\": null\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Tesla Model X\",\n            \"price\": 1000000000,\n            \"picture\": \"https://res.cloudinary.com/djepwirkq/image/upload/v1716136689/bcr/sumolhkyinskvk8fq3j4.png\",\n            \"start_rent\": \"2024-06-16T16:25:47.765Z\",\n            \"finish_rent\": \"2024-06-17T16:25:47.765Z\",\n            \"created_at\": \"2024-05-19T16:38:10.124Z\",\n            \"updated_at\": null\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve a car by id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "127.0.0.1:3000/api/cars/:id",
+              "host": ["127", "0", "0", "1"],
+              "port": "3000",
+              "path": ["api", "cars", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "uuid": "314f6165-b648-48b8-8e92-b03b0a074e99"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Car Id 1",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "127.0.0.1:3000/api/cars/:id",
+                  "host": ["127", "0", "0", "1"],
+                  "port": "3000",
+                  "path": ["api", "cars", ":id"],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"192-YHwFPreP8G1M4lT+jm+F6qEzZ0I\""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 03 Jun 2024 11:28:28 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "402"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"success\",\n    \"car\": {\n        \"id\": 1,\n        \"name\": \"Mazda\",\n        \"price\": 600000,\n        \"picture\": \"https://res.cloudinary.com/djepwirkq/image/upload/v1716209483/bcr/tpeqy2lzko2jvkvmey9b.jpg\",\n        \"start_rent\": \"2024-06-17T16:25:47.765Z\",\n        \"finish_rent\": \"2024-06-18T16:25:47.765Z\",\n        \"created_at\": \"2024-05-19T16:25:47.796Z\",\n        \"updated_at\": \"2024-05-20T12:51:23.576Z\",\n        \"deleted_at\": null,\n        \"created_by\": null,\n        \"updated_by\": null,\n        \"deleted_by\": null\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Add a car",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Tesla Model Z",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/home/nizar/Downloads/GUID-A016FC6C-5896-4495-9DD8-2B074869A838-online-en-US.png"
+                },
+                {
+                  "key": "price",
+                  "value": "1000000",
+                  "type": "text"
+                },
+                {
+                  "key": "start_rent",
+                  "value": "2024-06-16T16:25:47.765Z",
+                  "type": "text"
+                },
+                {
+                  "key": "finish_rent",
+                  "value": "2024-06-17T16:25:47.765Z",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "127.0.0.1:3000/api/cars",
+              "host": ["127", "0", "0", "1"],
+              "port": "3000",
+              "path": ["api", "cars"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update a car by id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Mazda",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/home/nizar/Pictures/Camera/Photo from 2024-05-20 19-43-23.186184.jpeg"
+                },
+                {
+                  "key": "price",
+                  "value": "600000",
+                  "type": "text"
+                },
+                {
+                  "key": "start_rent",
+                  "value": "2024-06-17T16:25:47.765Z",
+                  "type": "text"
+                },
+                {
+                  "key": "finish_rent",
+                  "value": "2024-06-18T16:25:47.765Z",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "127.0.0.1:3000/api/cars/:id",
+              "host": ["127", "0", "0", "1"],
+              "port": "3000",
+              "path": ["api", "cars", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "uuid": "465d390b-acee-4453-9de5-5a16280824d0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a car by id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "127.0.0.1:3000/api/cars/:id",
+              "host": ["127", "0", "0", "1"],
+              "port": "3000",
+              "path": ["api", "cars", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "uuid": "c7519758-478b-4fd0-9f11-ab0d2d3c2e41"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete a car by id",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "127.0.0.1:3000/api/cars/:id",
+                  "host": ["127", "0", "0", "1"],
+                  "port": "3000",
+                  "path": ["api", "cars", ":id"],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "15"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2a-+bnroIKHpAh8ZMSdKdV9IDVDT0o\""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 03 Jun 2024 11:33:06 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "42"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Car deleted\",\n    \"isDeleted\": true\n}"
+            }
+          ]
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        ]
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "exec": [""]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "exec": [""]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code == 200) {",
+                  "    pm.environment.set(\"token\", pm.response.json().token)",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"superadmin\",\n    \"password\": \"admin8521\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "login"]
+            }
+          },
+          "response": [
+            {
+              "name": "Successful Login",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"superadmin\",\n    \"password\": \"admin8521\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/login",
+                  "host": ["{{base_url}}"],
+                  "path": ["auth", "login"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"127-+PKa6Medz6880YuKdUTURT26iAw\""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 03 Jun 2024 11:23:09 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "295"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"success\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzdXBlcmFkbWluIiwicm9sZSI6InN1cGVyYWRtaW4iLCJpYXQiOjE3MTc0MTM3ODksImV4cCI6MTcxODAxODU4OSwiYXVkIjoiYmNyLXVzZXIiLCJpc3MiOiJiY3Itd2ViLXNlcnZlciIsInN1YiI6IjEifQ.URxmJ4p_XUTeFD6Sa8KEiryvPCa1MDW2Hj83Eb1L874\"\n}"
+            },
+            {
+              "name": "Failed login",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"superadmin\",\n    \"password\": \"aaa\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/login",
+                  "host": ["{{base_url}}"],
+                  "path": ["auth", "login"]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2b-2Y60DWM6seg0BBS2GSXYHM3gX1o\""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 03 Jun 2024 11:27:54 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "43"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Username or Password mismatch\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Register",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"orang biasa\",\n    \"username\": \"orangtidakbiasa\",\n    \"password\": \"biasa231\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "register"]
+            }
+          },
+          "response": [
+            {
+              "name": "Register Regular User",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"orang biasa\",\n    \"username\": \"orangtidakbiasa\",\n    \"password\": \"biasa231\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/register",
+                  "host": ["{{base_url}}"],
+                  "path": ["auth", "register"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"108-QBmrjvpmL6/EdJ8X6oCXEpthsik\""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 03 Jun 2024 11:28:59 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "264"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"success\",\n    \"user\": {\n        \"id\": 5,\n        \"name\": \"orang biasa\",\n        \"email\": null,\n        \"username\": \"orangtidakbiasa\",\n        \"password\": \"$2b$10$t1U9crWniYJbxVvSua.EQOjgaV1Hx704dlRstIoWX3PxL8cW0qBLO\",\n        \"role\": \"user\",\n        \"created_at\": \"2024-06-03T11:29:00.161Z\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Me",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/auth/me",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "me"]
+            }
+          },
+          "response": [
+            {
+              "name": "Me",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/auth/me",
+                  "host": ["{{base_url}}"],
+                  "path": ["auth", "me"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"114-sGtkYkvrVNAFsSC8c+HZNrizVl0\""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 03 Jun 2024 11:32:01 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "276"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"success\",\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"superadmin\",\n        \"email\": \"suadmin@bcr.id\",\n        \"username\": \"superadmin\",\n        \"password\": \"$2b$10$ET7ZZy07UAiSW2FEONrUMO/P8FMDtGJ8e5Lj6BEDPUkcW0ex2YORC\",\n        \"role\": \"superadmin\",\n        \"created_at\": \"2024-06-02T17:56:10.606Z\",\n        \"updated_at\": null,\n        \"deleted_at\": null\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Add new user",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"admin biasa\",\n    \"username\": \"admin@bcr.id\",\n    \"password\": \"admin9632\",\n    \"role\": \"admin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/",
+              "host": ["{{base_url}}"],
+              "path": ["users", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/users/",
+              "host": ["{{base_url}}"],
+              "path": ["users", ""]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All Users",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/users/",
+                  "host": ["{{base_url}}"],
+                  "path": ["users", ""]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"3ef-Q64ff/flKC4aLuwNhlIVCLDkJvc\""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 03 Jun 2024 11:32:14 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1007"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"success\",\n    \"users\": [\n        {\n            \"id\": 1,\n            \"name\": \"superadmin\",\n            \"email\": \"suadmin@bcr.id\",\n            \"username\": \"superadmin\",\n            \"password\": \"$2b$10$ET7ZZy07UAiSW2FEONrUMO/P8FMDtGJ8e5Lj6BEDPUkcW0ex2YORC\",\n            \"role\": \"superadmin\",\n            \"created_at\": \"2024-06-02T17:56:10.606Z\",\n            \"updated_at\": null,\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"admin agak biasa\",\n            \"email\": null,\n            \"username\": \"admin@bcr.id\",\n            \"password\": \"$2b$10$kCb/BGp4jw3tXsp0btSMfOCFzal8XQ8oZcU5AueW5bKbLtjZxHtDm\",\n            \"role\": \"admin\",\n            \"created_at\": \"2024-06-03T11:15:03.840Z\",\n            \"updated_at\": \"2024-06-03T11:19:46.599Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"orang biasa\",\n            \"email\": null,\n            \"username\": \"orangbiasa\",\n            \"password\": \"$2b$10$Zs9wHPi8nPIOTCHjLPqOH.zGVVaabqI0U7fq2Htc6F6LGBIsmxq8m\",\n            \"role\": \"user\",\n            \"created_at\": \"2024-06-03T11:20:39.679Z\",\n            \"updated_at\": null,\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"orang biasa\",\n            \"email\": null,\n            \"username\": \"orangtidakbiasa\",\n            \"password\": \"$2b$10$t1U9crWniYJbxVvSua.EQOjgaV1Hx704dlRstIoWX3PxL8cW0qBLO\",\n            \"role\": \"user\",\n            \"created_at\": \"2024-06-03T11:29:00.161Z\",\n            \"updated_at\": null,\n            \"deleted_at\": null\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get User by Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/users/:id",
+              "host": ["{{base_url}}"],
+              "path": ["users", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2",
+                  "uuid": "78270913-f33f-4796-85bf-dfe51901f475"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "User Id 2",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/users/:id",
+                  "host": ["{{base_url}}"],
+                  "path": ["users", ":id"],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"121-0eguHZYhoxw+67veaaSwZyvJH3c\""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 03 Jun 2024 11:32:20 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "289"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"success\",\n    \"user\": {\n        \"id\": 2,\n        \"name\": \"admin agak biasa\",\n        \"email\": null,\n        \"username\": \"admin@bcr.id\",\n        \"password\": \"$2b$10$kCb/BGp4jw3tXsp0btSMfOCFzal8XQ8oZcU5AueW5bKbLtjZxHtDm\",\n        \"role\": \"admin\",\n        \"created_at\": \"2024-06-03T11:15:03.840Z\",\n        \"updated_at\": \"2024-06-03T11:19:46.599Z\",\n        \"deleted_at\": null\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update User by Id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"admin agak biasa\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/users/:id",
+              "host": ["{{base_url}}"],
+              "path": ["users", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2",
+                  "uuid": "e52bb118-a77f-489e-b81e-34d3ab576092"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User by Id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/users/:id",
+              "host": ["{{base_url}}"],
+              "path": ["users", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "3",
+                  "uuid": "abefff91-086f-4256-aa03-65bf39e59470"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete User by Id",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/users/:id",
+                  "host": ["{{base_url}}"],
+                  "path": ["users", ":id"],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "3"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2b-eYU+EJxwocl62DYzb4fnvPS6Y2o\""
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 03 Jun 2024 11:32:45 GMT"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "43"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"User deleted\",\n    \"isDeleted\": true\n}"
+            }
+          ]
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        ]
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "exec": [""]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "exec": [""]
+          }
+        }
+      ]
+    }
+  ]
 }

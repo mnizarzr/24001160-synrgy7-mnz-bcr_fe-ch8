@@ -9,15 +9,15 @@ const config: { [key: string]: Knex.Config } = {
       database: "binar_cr",
       user: "root",
       password: "root",
-      port: 5432
+      port: 5432,
     },
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
     migrations: {
-      directory: "./migrations"
-    }
+      directory: "./migrations",
+    },
   },
 
   staging: {
@@ -26,15 +26,15 @@ const config: { [key: string]: Knex.Config } = {
       database: "binar_cr",
       user: "root",
       password: "root",
-      port: 5432
+      port: 5432,
     },
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
     migrations: {
-      tableName: "knex_migrations"
-    }
+      tableName: "knex_migrations",
+    },
   },
 
   production: {
@@ -43,17 +43,16 @@ const config: { [key: string]: Knex.Config } = {
       database: "binar_cr",
       user: "root",
       password: "root",
-      port: 5432
+      port: 5432,
     },
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
     migrations: {
-      tableName: "knex_migrations"
-    }
-  }
-
+      tableName: "knex_migrations",
+    },
+  },
 };
 
 module.exports = config;

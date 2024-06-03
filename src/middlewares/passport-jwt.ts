@@ -1,5 +1,5 @@
-import passport from 'passport'
+import passport from "passport";
 
-const authJwt = passport.authenticate('jwt', { session: false })
+const authJwt = passport.authenticate("jwt", { session: false });
 
-export default authJwt
+export default authJwt;
