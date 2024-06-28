@@ -1,7 +1,15 @@
+import { useAuth, useAuthDispatch } from "@/contexts/AuthContext";
 import { Link, useLocation } from "react-router-dom";
 
 const Header: React.FC = () => {
+  const auth = useAuth();
+  const dispatch = useAuthDispatch();
   const location = useLocation();
+
+  const handleLogout = () => {
+    localStorage.removeItem("user_token");
+    dispatch({ type: "LOGOUT" });
+  };
 
   return (
     <>
@@ -11,12 +19,14 @@ const Header: React.FC = () => {
           className="navbar navbar-expand-md justify-content-between"
         >
           <div className="container-fluid">
-            <div
-              className="navbar-brand"
-              style={{ width: 150, height: 40, backgroundColor: "blue" }}
-            >
-              <span>Brand</span>
-            </div>
+            <Link to="/">
+              <div
+                className="navbar-brand"
+                style={{ width: 150, height: 40, backgroundColor: "blue" }}
+              >
+                <span>Brand</span>
+              </div>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -67,11 +77,31 @@ const Header: React.FC = () => {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <button className="btn btn-success">
-                      <a className="text-white text-decoration-none" href="#">
-                        Register
-                      </a>
-                    </button>
+                    {auth?.name ? (
+                      <>
+                        <span className="btn btn-success">{auth.name}</span>
+                        <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+                      </>
+                    ) : (
+                      <>
+                        <button className="btn btn-success">
+                          <Link
+                            className="text-white text-decoration-none"
+                            to="/login"
+                          >
+                            Login
+                          </Link>
+                        </button>
+                        <button className="btn btn-success">
+                          <Link
+                            className="text-white text-decoration-none"
+                            to="/register"
+                          >
+                            Register
+                          </Link>
+                        </button>
+                      </>
+                    )}
                   </li>
                 </ul>
               </div>

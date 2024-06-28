@@ -1,5 +1,6 @@
 import express, { Response } from "express";
 import bodyParser from "body-parser";
+import cors from 'cors'
 import { createCarRouter } from "./routes/cars.routes";
 import CarHandler from "./handlers/car.handler";
 import jwtStrategy from "./middlewares/jwt-strategy";
@@ -20,6 +21,7 @@ const swaggerDocument = YAML.parse(file);
 async function createServer() {
   const app = express();
 
+  app.use(cors({ origin: true, credentials: true }))
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
 

@@ -1,4 +1,45 @@
-export default function CarFilter() {
+import { listCars } from "@/helpers/populate";
+import React, { useState } from "react";
+import CarCard from "./CarCard";
+import { Car } from "@/types/car";
+
+const CarFilter: React.FC = () => {
+  const [cars, setCars] = useState<Car[]>([]);
+  const [withDriver, setWithDriver] = useState<string>("");
+  const [date, setDate] = useState<string>("");
+  const [availableAt, setAvailableAt] = useState<string>("");
+  const [seats, setSeats] = useState<number | null>(null);
+  const [isButtonEnabled, setIsButtonEnabled] = useState<boolean>(false);
+
+  const filterCars = (car: Car): boolean => {
+    if (date !== "" && availableAt !== "") {
+      const inputDate = new Date(`${date}T${availableAt}`);
+      const carDate = new Date(car.availableAt);
+
+      if (
+        carDate.getTime() >= inputDate.getTime() &&
+        (withDriver === "" || withDriver === car.withDriver?.toString())
+      ) {
+        if (seats !== null) {
+          return car.capacity >= seats;
+        }
+        return true;
+      }
+    }
+    return false;
+  };
+
+  const handleSearch = async () => {
+    const carsList = await listCars(filterCars);
+    setCars(carsList);
+  };
+
+  const handleInputChange = () => {
+    const isEnabled = withDriver != "" && date != "" && availableAt != "";
+    console.log({ withDriver, date, availableAt, isEnabled });
+    setIsButtonEnabled(isEnabled);
+  };
+
   return (
     <>
       <main>
@@ -11,7 +52,11 @@ export default function CarFilter() {
                   <select
                     className="form-select"
                     data-placeholder="Pilih Tipe Driver"
-                    id="with-driver"
+                    value={withDriver}
+                    onChange={(e) => {
+                      setWithDriver(e.target.value);
+                      handleInputChange();
+                    }}
                   >
                     <option value="" />
                     <option value="true">Dengan Sopir</option>
@@ -25,7 +70,11 @@ export default function CarFilter() {
                   <input
                     type="date"
                     className="form-control"
-                    id="filter-date"
+                    value={date}
+                    onChange={(e) => {
+                      setDate(e.target.value);
+                      handleInputChange();
+                    }}
                   />
                 </div>
               </div>
@@ -35,9 +84,13 @@ export default function CarFilter() {
                   <select
                     className="form-select"
                     data-placeholder="Pilih Waktu"
-                    id="available-at"
+                    value={availableAt}
+                    onChange={(e) => {
+                      setAvailableAt(e.target.value);
+                      handleInputChange();
+                    }}
                   >
-                    <option />
+                    <option value="" />
                     <option value="08:00:00">08.00</option>
                     <option value="09:00:00">09.00</option>
                     <option value="10:00:00">10.00</option>
@@ -48,14 +101,21 @@ export default function CarFilter() {
               <div style={{ width: "25%" }}>
                 <div className="form-group">
                   <label className="mb-2">Jumlah Penumpang (Optional)</label>
-                  <input type="number" className="form-control" id="seats" />
+                  <input
+                    type="number"
+                    className="form-control"
+                    value={seats || ""}
+                    onChange={(e) =>
+                      setSeats(e.target.value ? parseInt(e.target.value) : null)
+                    }
+                  />
                 </div>
               </div>
             </div>
             <button
               className="btn btn-search btn-success rounded-0 mt-3"
-              id="search-btn"
-              disabled={true}
+              onClick={handleSearch}
+              disabled={!isButtonEnabled}
             >
               Cari Mobil
             </button>
@@ -63,10 +123,16 @@ export default function CarFilter() {
         </section>
         <section id="section-list-car" style={{ padding: "0 128px" }}>
           <div className="container">
-            <div className="row" id="cars-container"></div>
+            <div className="row">
+              {cars.map((car) => (
+                <CarCard key={car.id} car={car} />
+              ))}
+            </div>
           </div>
         </section>
       </main>
     </>
   );
-}
+};
+
+export default CarFilter;
