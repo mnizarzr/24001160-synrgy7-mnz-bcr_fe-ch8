@@ -2,8 +2,8 @@ import CarCard from "@/components/admin/CarCard";
 import { useCars, useCarsDispatch } from "@/contexts/CarContext";
 import axios from "@/utils/axios";
 import { useEffect } from "react";
-
-import { Row } from "antd";
+import { Link } from "react-router-dom";
+import { Button, Row } from "antd";
 
 const Dashboard: React.FC = () => {
   const cars = useCars();
@@ -23,6 +23,9 @@ const Dashboard: React.FC = () => {
 
   return (
     <>
+      <Link to="/admin/addCar">
+        <Button>Add New Car</Button>
+      </Link>
       <Row gutter={[16, 24]}>
         {cars.map((car) => (
           <CarCard car={car} key={car.id} />

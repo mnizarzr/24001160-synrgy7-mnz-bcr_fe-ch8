@@ -8,6 +8,8 @@ import { CarsProvider } from "./contexts/CarContext";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { AuthProvider } from "./contexts/AuthContext";
+import AddCar from "./pages/admin/AddCar";
+import UpdateCar from "./pages/admin/EditCar";
 
 const router = createBrowserRouter([
   {
@@ -45,18 +47,24 @@ const router = createBrowserRouter([
     path: "/admin",
     element: (
       <AuthProvider>
-        <AdminDashboardLayout />
+        <CarsProvider>
+          <AdminDashboardLayout />
+        </CarsProvider>
       </AuthProvider>
     ),
     children: [
       {
         index: true,
         path: "",
-        element: (
-          <CarsProvider>
-            <Dashboard />
-          </CarsProvider>
-        ),
+        element: <Dashboard />,
+      },
+      {
+        path: "addCar",
+        element: <AddCar />,
+      },
+      {
+        path: "editCar/:id",
+        element: <UpdateCar />,
       },
     ],
   },

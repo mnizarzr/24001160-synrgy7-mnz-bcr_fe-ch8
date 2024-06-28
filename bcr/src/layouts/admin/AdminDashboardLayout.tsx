@@ -12,7 +12,7 @@ export default function AdminDashboardLayout() {
           backgroundColor: "white",
         }}
       >
-        <Sidebar />
+        {/* <Sidebar /> */}
         <Layout
           style={{
             background: "none",
