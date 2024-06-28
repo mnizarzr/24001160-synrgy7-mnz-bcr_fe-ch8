@@ -25,21 +25,30 @@ export default class CarHandler {
       file = `data:${req.file?.mimetype};base64,${bufferBase64}`;
     }
 
-    const car = await this.carService.createCar(
-      {
-        name,
-        price,
-        start_rent,
-        finish_rent,
-        pictureBase64: file,
-      },
-      id,
-    );
+    try {
+      const car = await this.carService.createCar(
+        {
+          name,
+          price,
+          start_rent,
+          finish_rent,
+          pictureBase64: file,
+        },
+        id,
+      );
 
-    res.status(201).json({
-      message: "Car created",
-      car,
-    });
+      res.status(201).json({
+        message: "Car created",
+        car,
+      });
+    } catch (error) {
+      res.status(400).json({
+        error: true,
+        message: "something's wrong",
+        car: null
+      })
+    }
+
   };
 
   getCarById = async (req: Request, res: Response) => {

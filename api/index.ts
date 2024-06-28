@@ -2,6 +2,7 @@ import { AddressInfo } from "net";
 import createServer from "./src/app";
 import knex from "knex";
 import { Model } from "objection";
+import cloudinary from "./src/config/cloudinary";
 
 (async () => {
   const knexInstance = knex({
@@ -18,6 +19,7 @@ import { Model } from "objection";
 
   const { PORT = 3000, HOST = "127.0.0.1" } = process.env;
 
+  console.log(cloudinary)
   const app = await createServer();
   const server = app.listen(+PORT, HOST, () => {
     const info = server.address() as AddressInfo;

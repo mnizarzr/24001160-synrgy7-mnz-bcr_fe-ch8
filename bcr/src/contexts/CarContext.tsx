@@ -58,10 +58,7 @@ const carsReducer: Reducer<Car[], CarAction> = (cars, action) => {
       return [...cars, ...action.payload];
     }
     case "ADD_CAR": {
-      return [
-        ...cars,
-        action.payload
-      ];
+      return [...cars, action.payload];
     }
     case "UPDATE_CAR": {
       return cars.map((c) => {

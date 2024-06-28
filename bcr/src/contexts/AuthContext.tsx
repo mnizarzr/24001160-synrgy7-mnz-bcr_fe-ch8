@@ -1,6 +1,7 @@
-import {
+import React, {
   Dispatch,
   PropsWithChildren,
+  ReactNode,
   Reducer,
   createContext,
   useContext,
@@ -29,8 +30,20 @@ export type UserAction =
   | { type: "GET_ME"; payload: UserInfo };
 
 const AuthContext = createContext<UserInfo | null>(null);
-
 const AuthDispatchContext = createContext<Dispatch<UserAction> | null>(null);
+
+const authReducer: Reducer<UserInfo | null, UserAction> = (auth, action) => {
+  switch (action.type) {
+    case "LOGIN":
+      return auth;
+    case "LOGOUT":
+      return null;
+    case "GET_ME":
+      return action.payload;
+    default:
+      return auth;
+  }
+};
 
 export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [auth, dispatch] = useReducer(authReducer, null);
@@ -40,15 +53,19 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
   useEffect(() => {
     const fetchUser = async () => {
       if (userToken) {
-        const { data } = await axios({
-          method: "POST",
-          url: "/auth/me",
-          headers: {
-            Authorization: `Bearer ${userToken}`,
-          },
-        });
+        try {
+          const { data } = await axios({
+            method: "POST",
+            url: "/auth/me",
+            headers: {
+              Authorization: `Bearer ${userToken}`,
+            },
+          });
 
-        dispatch({ type: "GET_ME", payload: data.user });
+          dispatch({ type: "GET_ME", payload: data.user });
+        } catch (error) {
+          console.error("Failed to fetch user:", error);
+        }
       }
     };
     fetchUser();
@@ -67,25 +84,23 @@ export function useAuth(): UserInfo {
   return useContext(AuthContext)!;
 }
 
-export function AuthAdmin({ children }: { children: PropsWithChildren }) {
-  const navigate = useNavigate();
-  const auth = useAuth();
-
-  if (auth?.role == "admin" || auth?.role == "superadmin") return children;
-  return navigate("/");
-}
-
 export function useAuthDispatch(): Dispatch<UserAction> {
   return useContext(AuthDispatchContext)!;
 }
 
-const authReducer: Reducer<UserInfo | null, UserAction> = (auth, action) => {
-  switch (action.type) {
-    case "LOGIN":
-      return auth;
-    case "LOGOUT":
-      return null;
-    case "GET_ME":
-      return action.payload;
+export const AuthAdmin: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const navigate = useNavigate();
+  const auth = useAuth();
+
+  useEffect(() => {
+    if (auth?.role !== "admin" && auth?.role !== "superadmin") {
+      navigate("/");
+    }
+  }, [auth, navigate]);
+
+  if (auth?.role === "admin" || auth?.role === "superadmin") {
+    return <>{children}</>;
   }
+
+  return null; // Return null or some loading/error component
 };

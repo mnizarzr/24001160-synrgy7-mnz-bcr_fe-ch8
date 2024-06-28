@@ -2,13 +2,15 @@ import { Car, useCarsDispatch } from "@/contexts/CarContext";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Button, Card, Col, Popconfirm, PopconfirmProps, message } from "antd";
 import axios from "@/utils/axios";
+import { useNavigate } from "react-router-dom";
 
 const { Meta } = Card;
 
 const CarCard: React.FC<{ car: Car }> = ({ car: { id, picture, name } }) => {
+  const navigate = useNavigate();
   const dispatch = useCarsDispatch();
 
-  const confirmDelete: PopconfirmProps["onConfirm"] = async (e) => {
+  const confirmDelete: PopconfirmProps["onConfirm"] = async () => {
     const { data } = await axios.delete(`/cars/${id}`);
     if (data.isDeleted) {
       dispatch({ type: "DELETE_CAR", id });
@@ -18,7 +20,7 @@ const CarCard: React.FC<{ car: Car }> = ({ car: { id, picture, name } }) => {
 
   const confirmUpdate: PopconfirmProps["onConfirm"] = (e) => {
     console.log(e);
-    message.success("Click on Yes");
+    navigate(`/admin/editCar/${id}`)
   };
 
   const cancel: PopconfirmProps["onCancel"] = (e) => {

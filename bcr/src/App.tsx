@@ -7,7 +7,7 @@ import Dashboard from "./pages/admin/Dashboard";
 import { CarsProvider } from "./contexts/CarContext";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import { AuthProvider } from "./contexts/AuthContext";
+import { AuthProvider, AuthAdmin } from "./contexts/AuthContext";
 import AddCar from "./pages/admin/AddCar";
 import UpdateCar from "./pages/admin/EditCar";
 
@@ -47,9 +47,11 @@ const router = createBrowserRouter([
     path: "/admin",
     element: (
       <AuthProvider>
-        <CarsProvider>
-          <AdminDashboardLayout />
-        </CarsProvider>
+        <AuthAdmin>
+          <CarsProvider>
+            <AdminDashboardLayout />
+          </CarsProvider>
+        </AuthAdmin>
       </AuthProvider>
     ),
     children: [
